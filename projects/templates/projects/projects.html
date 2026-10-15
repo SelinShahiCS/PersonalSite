@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Projects | Selin Shahi
+{% endblock %}
+
+{% block navigation %}
+<a href="{% url 'home' %}">Home</a>
+<a href="{% url 'article' %}">Article</a>
+{% endblock %}
+
+{% block mobile_navigation %}
+<a href="{% url 'home' %}">Home</a>
+<a href="{% url 'article' %}">Article</a>
+{% endblock %}
+
+
+{% block content %}
+<main class="projects">
+
+    <h1>Projects</h1>
+
+    <div class="projects-list">
+        {% for project in projects %}
+
+            <article class="project-card">
+
+                <h2 class="project-card-title">
+                    <a href="{% url 'project_detail' project.slug %}">
+                        {{ project.title }}
+                    </a>
+                </h2>
+
+                <p class="project-description">
+                    {{ project.description }}
+                </p>
+
+                {% if project.technologies %}
+                    <p class="project-technologies">
+                        <span>Technologies:</span>
+                        {{ project.technologies }}
+                    </p>
+                {% endif %}
+
+                <div class="project-links">
+
+                    {% if project.github_url %}
+                        <a
+                            href="{{ project.github_url }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View on GitHub ↗
+                        </a>
+                    {% endif %}
+
+                    {% if project.live_url %}
+                        <a
+                            href="{{ project.live_url }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Live Demo ↗
+                        </a>
+                    {% endif %}
+
+                </div>
+
+                <a
+                    href="{% url 'project_detail' project.slug %}"
+                    class="project-detail-link"
+                >
+                    Explore Project →
+                </a>
+
+            </article>
+
+        {% empty %}
+            <p>No projects available yet.</p>
+        {% endfor %}
+    </div>
+
+</main>
+{% endblock %}

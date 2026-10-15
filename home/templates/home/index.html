@@ -1,0 +1,164 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Home | Selin Shahi
+{% endblock %}
+
+{% block navigation %}
+<a href="{% url 'article' %}">Article</a>
+<a href="{% url 'projects' %}">Projects</a>
+{% endblock %}
+
+{% block mobile_navigation %}
+<a href="{% url 'projects' %}">Projects</a>
+<a href="{% url 'article' %}">Article</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- About Section -->
+<div class="about-content">
+
+    <div class="about-section-wrap">
+
+        <div class="about-text">
+            <p>Hi, I'm Selin</p>
+        </div>
+    </div>
+
+    <div class="about-main">
+        <div class="about-description">
+            <h2>
+                Computer Science Student & AI Enthusiast
+            </h2>
+            <p>
+                I'm a Computer Science student exploring Artificial Intelligence,
+                with a particular interest in Natural Language Processing and
+                educational technology.
+
+                I enjoy combining programming, language education, and research
+                to explore how intelligent systems can support personalized and
+                effective learning.
+
+                I'm currently developing my skills in Python, Machine
+                Learning, and academic research while building projects that
+                connect technology with education.
+            </p>
+        </div>
+        <div class="about-image">
+            <img
+                src="{% static 'home/images/background.png' %}"
+                alt="Selin's profile"
+            >
+        </div>
+    </div>
+</div>
+
+<!-- Contact Section -->
+<div class="contact">
+    <h3>
+        Contact
+    </h3>
+</div>
+
+<div class="contact-section">
+    <a
+        href="https://github.com/SelinShahiCS"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        <i class="fab fa-github"></i>
+    </a>
+    <a
+        href="https://www.linkedin.com/in/clia-gold-ba50aa3b1"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        <i class="fab fa-linkedin"></i>
+    </a>
+
+    <a href="mailto:selin.shahi.cs@gmail.com">
+        <i class="fas fa-envelope"></i>
+    </a>
+</div>
+
+<!-- Resume Section -->
+<div class="resume-box">
+    <div class="resume-grid">
+        <!-- Education -->
+        <div class="resume-item">
+            <h3>
+                Education
+            </h3>
+            <p>
+                <i class="fas fa-graduation-cap"></i>
+                Computer Science
+            </p>
+        </div>
+
+        <!-- Languages -->
+        <div class="resume-item">
+            <h3>
+                Languages
+            </h3>
+            <p>
+                <i class="fas fa-globe"></i>
+                Persian (Native)
+                <br>
+                <i class="fas fa-globe"></i>
+                English (Upper Intermediate)
+                <br>
+                <i class="fas fa-globe"></i>
+                Korean (Intermediate)
+
+            </p>
+        </div>
+
+        <!-- Technologies -->
+        <div class="resume-item">
+            <h3>
+                Known
+            </h3>
+
+            <div class="tech-icons">
+                <div class="tech-item">
+                    <i class="devicon-python-plain"></i>
+                    <span>
+                        Python
+                    </span>
+                </div>
+
+                <div class="tech-item">
+                    <i class="devicon-cplusplus-plain"></i>
+                    <span>
+                        C++
+                    </span>
+                </div>
+
+                <div class="tech-item">
+                    <i class="devicon-html5-plain"></i>
+                    <span>
+                        HTML
+                    </span>
+                </div>
+
+                <div class="tech-item">
+                    <i class="devicon-css3-plain"></i>
+                    <span>
+                        CSS
+                    </span>
+                </div>
+                <div class="tech-item">
+                    <i class="devicon-git-plain"></i>
+                    <span>
+                        Git
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

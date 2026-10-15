@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ article.title }} | Selin Shahi
+{% endblock %}
+
+
+{% block navigation %}
+
+<a href="{% url 'home' %}">
+    Home
+</a>
+
+<a href="{% url 'projects' %}">
+    Projects
+</a>
+
+<a href="{% url 'article' %}">
+    Articles
+</a>
+
+{% endblock %}
+
+
+{% block mobile_navigation %}
+
+<a href="{% url 'home' %}">
+    Home
+</a>
+
+<a href="{% url 'projects' %}">
+    Projects
+</a>
+
+<a href="{% url 'article' %}">
+    Articles
+</a>
+
+{% endblock %}
+
+
+{% block content %}
+
+<main class="article-detail">
+
+    <h1>
+        {{ article.title }}
+    </h1>
+
+    <p class="article-date">
+        {{ article.created_at|date:"F d, Y" }}
+    </p>
+
+    <p class="article-description">
+        {{ article.description }}
+    </p>
+
+    <div class="article-content">
+        {{ article.content|linebreaks }}
+    </div>
+
+    <a
+        href="{% url 'article' %}"
+        class="article-back-link"
+    >
+        ← Back to Articles
+    </a>
+
+</main>
+
+{% endblock %}

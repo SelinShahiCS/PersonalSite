@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    >
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    >
+    <link rel="icon" href="{% static 'home/images/favicon.jpg' %}">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    >
+    <title>{% block title %}Selin Shahi | Personal Portfolio{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}Explore Selin Shahi's personal portfolio, programming projects, technical articles, and skills in software development.{% endblock %}">
+
+</head>
+<body>
+
+    <!-- Header -->
+<header class="header">
+
+    <div class="header-left">
+
+        <div class="logo-box">
+            <div class="logo">Selin Shahi</div>
+            <p class="site-motto">We believe in code</p>
+        </div>
+
+        {% block header_extra %}
+        {% endblock %}
+
+    </div>
+
+    <nav class="nav desktop-nav">
+        {% block navigation %}
+        {% endblock %}
+    </nav>
+
+    <div class="menu-btn" id="menuBtn">☰</div>
+
+</header>
+
+    <!-- Mobile Side Menu -->
+    <div class="side-menu" id="sideMenu">
+        <div class="close-btn" id="closeBtn">&times;</div>
+
+        {% block mobile_navigation %}
+        {% endblock %}
+    </div>
+
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Page Content -->
+    {% block content %}
+    {% endblock %}
+
+    <!-- JavaScript -->
+    <script src="{% static 'home/js/script.js' %}"></script>
+</body>
+
+</html>
